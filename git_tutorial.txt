@@ -1,0 +1,77 @@
+What is git:
+    The idea of git is simple, it is a piece of software runs on your local machine that you can use to record the history of your project. 
+    And you can upload/download (known as push/pull in the world of git) your project on/from the server so you can collaborate with other people.
+
+How to get git running on your machine:
+	There are generally many ways to install git on your machine, if the approaches listed below do not work for you, just try some other ways 
+    from google.
+	
+	Mac: 
+		Use homebrew: brew install git
+		Homebrew is a popular package management software on Mac. If homebrew is not available on your machine, google how to install it, 
+        should be straightforward.
+
+	Windows:
+		There is no native git build for Windows machine, but the git for windows project is doing a pretty good job. You can get the installer 
+        from: https://gitforwindows.org/
+
+	Linux:
+		This dependents on the distribution you use, generally you can install git by using the package management tool on your machine
+
+Git workflow:
+    1. You clone a existing a project from github to your local machine, a project in remote is called a repository
+    2. You add/delete/modify the files in the project, create a snapshot and add a description to it everytime you have made some progress.
+        A "snapshot" is called a commit.
+    3. After you have created some of commits, you would like to upload your work to the cloud so other people can see your work, this is
+        called to push your changes.
+    4. If somebody else did some work to the same project you have been working on, and they have pushed their work onto the cloud already. 
+        You can pull their changes from cloud and merge them into the project on your machine.
+
+How to clone a repo to your local machine:
+    1. Use cd command to navigate to your desired working directory.
+    2. Run command: git clone _address_of_ur_repo_
+
+How to create a new commit:
+    1. Make some changes in your cloned project.
+    2. Stage all the changes: git add .
+        Or, to only stage some of the changes: git add _some_file_name_
+    3. Commit staged files: git commit -m "Your des of this commit"
+
+How to push your work to remote:
+    git push -u origin master
+    Note1: -u option means to setup the upstream branch of current branch, origin is the name of the remote repo and master means the name
+        of the remote branch.
+    Note2: After the first time you have used the above command, you can simply use git push in the future
+
+How to pull other people's work from cloud:
+    git pull -u origin master
+    Note1: After the first time you have used the above command, you can simply use git pull in the future
+
+A complete example of using git:
+    1. Use cd command to navigate to your desired working directory:
+    cd Desktop
+
+    2. Clone desired project:
+    git clone https://github.com/michaeldai1006/git-tutorial.git
+
+    3. cd into the project
+    cd ./git-tutorial
+
+    4. Make changes to the project. In this case, create a new text files
+    touch someFile.py
+
+    5. Stage your changes:
+    git add .
+
+    6. Commit your changes:
+    git commit -m "Create text file someFile.py"
+
+    7. Push your work to remote:
+    git push -u origin master
+
+Conclusion:
+    By understanding the above instructions you should be able to perform all of the basic git operations. There are a lot more to
+    learn if you are interested: branch, merge, merge conflic etc.
+    
+    A free book I would recommend:
+    https://git-scm.com/book/en/v2
